@@ -1,10 +1,11 @@
 :root {
-  --cor-primaria: #556df7;
-  --cor-primaria-escura: #3342ea;
-  --cor-secundaria: #ca3904;
-  --texto-escuro: #181e27;
-  --texto-claro: #5d636e;
-  --cor-clara: #f3f3f3;
+  --cor-primaria: #d96112;
+  --cor-primaria-escura: #a23d0f;
+  --cor-secundaria: #51341f;
+  --texto-escuro: #bda89e;
+  --texto-claro: #ebd1c5;
+  --cor-clara: #1b1c14;
+  --cor-fundo: #040404a0;
 }
 
 * {
@@ -17,13 +18,13 @@
 }
 
 body {
-  background-color: var(--cor-clara);
+  background-color: var(--cor-secundaria);
   height: 100vh;
 }
 
 header {
-  background-color: white;
-  padding: 1% 4% 1% 4%;
+  background-color: var(--cor-clara);
+  padding: 1% 11.7% 1% 11.7%;
 }
 
 .container-flex {
@@ -74,13 +75,47 @@ nav ul li a:hover {
 }
 
 .conteudo-div {
-  padding: 0% 0% 0% 8%;
+  padding: 10% 0% 0% 10vw;
+  background-color: var(--cor-fundo);
+  height: 100%;
+  border-right: #a23d0f 2px solid;
+}
+
+.main-sobre {
+  height: 100vh;
+  background-image: url(./img/foto3.jpg);
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-size: auto 100vh;
+  background-color: var(--cor-fundo);
+}
+
+.main-sobre section {
+  text-align: justify;
+  margin-left: 30%;
+  background-color: #04040471;
+  height: 100%;
+}
+
+.nome {
+  font-size: clamp(1em, 1em + 1vw, 2.5em);
+  font-weight: bold;
+  color: var(--cor-primaria-escura);
+  padding-top: 8%;
+  margin: 0% 8% 2% 8%;
+}
+
+.bio {
+  line-height: 99%;
+  font-size: clamp(1em, 0.5em + 1vw, 1.7em);
+  color: var(--texto-escuro);
+  margin: 0% 8% 2% 8%;
 }
 
 .subtitulo {
   letter-spacing: 2px;
   font-size: clamp(0.9em, 0.4em + 1vw, 1.5em);
-  color: var(--texto-claro);
+  color: var(--texto-escuro);
   margin-bottom: 1%;
 }
 
@@ -88,14 +123,14 @@ nav ul li a:hover {
   font-size: clamp(1em, 1em + 1vw, 2.5em);
   font-weight: 400;
   line-height: 105%;
-  color: var(--texto-escuro);
+  color: var(--texto-claro);
   margin-bottom: 1%;
 }
 
-.descricao {
+.boasvindas {
   line-height: 99%;
   font-size: clamp(0.9em, 0.4em + 1vw, 1.5em);
-  color: var(--texto-claro);
+  color: var(--texto-escuro);
   margin-bottom: 4%;
   margin-right: 10%;
 }
@@ -103,13 +138,13 @@ nav ul li a:hover {
 .btn-contratar,
 .btn-projetos {
   font-weight: bold;
-  letter-spacing: 1.2px;
+  letter-spacing: 2.5px;
   padding: 0.8rem 0.8rem;
-  border: 2px solid var(--cor-primaria-escura);
+  border: 2px solid var(--cor-primaria);
   border-radius: 10px;
   cursor: pointer;
-  background-color: var(--cor-clara);
-  color: var(--texto-escuro);
+  background-color: var(--cor-primaria-escura);
+  color: var(--texto-claro);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   margin-right: 3%;
 }
@@ -119,66 +154,119 @@ button:hover {
   color: var(--cor-clara);
 }
 
-#foto-perfil {
+.foto {
   display: flex;
   justify-content: center;
 }
 
-#foto-perfil img {
-  width: min(25rem, 90%);
-  border-radius: 100%;
+#foto-inicio {
+  width: min(35rem, 90%);
+  border-radius: 150% 50% 50% 50%;
   border: #040404 1px solid;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
+.curriculo {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
 
+.curriculo h2 {
+  background-color: var(--cor-primaria-escura);
+  text-align: center;
+  color: white;
+}
+
+.cartao {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  background-color: var(--cor-primaria-escura);
+}
+
+.formacao {
+  background-color: var(--texto-claro);
+  padding: 1% 5%;
+  margin-bottom: 5px;
+}
+
+.cartao img {
+  width: 60%;
+  margin: auto;
+  display: block;
+}
+
+.descricao {
+  padding: 10px;
+}
+
+.descricao h4 {
+  color: rgb(88, 87, 87);
+}
 
 /* Extra small devices (phones, 650px and down) */
 @media only screen and (max-width: 650px) {
   .container-flex {
-    display: block
+    display: block;
   }
 
-  .logo, nav, .menu {
+  .main-sobre {
+    background-position: center center;
+  }
+
+  .logo,
+  nav,
+  .menu {
     width: 100%;
     display: flex;
     justify-content: center;
     margin: 10px 0px 10px 0px;
   }
 
-  .logo a {
-    font-size: clamp(0.1em, 0.8em + 1vw, 3.5em);
-  }
-  
-  nav ul li a {
-    font-size: clamp(0.1em, 0.8em + 0.8vw, 0.9em);
-  }
-
   .container-grid {
     display: block;
   }
-  
+
   .conteudo-div {
-    margin: 15% 0% 15% 0%;
-  }
-  
-  #foto-perfil img {
-    width: min(20rem, 80%);
+    margin: 0% 0% 15% 0%;
+    padding: 12%;
   }
 
+  .btn-contratar,
+  .btn-projetos {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    padding: 0.5rem 0.5rem;
+    margin-right: 3%;
+  }
+
+  section {
+    margin-left: 0%;
+    background-color: #0404049a;
+  }
+
+  .nome {
+    padding: 4%;
+    margin: 0% 8% 0% 8%;
+  }
+
+  .bio {
+    padding: 2%;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+}
 
+@media only screen and (max-width: 2000px) {
 }
