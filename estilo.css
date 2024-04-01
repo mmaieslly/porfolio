@@ -1,3 +1,4 @@
+/*Definindo principais cores que serão usadas, paleta escolhida com base no IMG do INDEX*/
 :root {
   --cor-primaria: #d96112;
   --cor-primaria-escura: #a23d0f;
@@ -8,6 +9,7 @@
   --cor-fundo: #040404a0;
 }
 
+/*Reset*/
 * {
   margin: 0;
   padding: 0;
@@ -17,29 +19,55 @@
   list-style: none;
 }
 
-body {
+a:-webkit-any-link {/*Tirando o efeito do link*/
+  color: var(--texto-escuro);
+}
+
+body {/*Definindo cor e tamanho para o body*/
   background-color: var(--cor-secundaria);
   height: 100vh;
 }
 
-header {
+/*Estilizando um botao*/
+.btn {
+  font-weight: bold;
+  letter-spacing: 2.5px;
+  padding: 0.8rem 0.8rem;
+  border: 2px solid var(--cor-primaria);
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: var(--cor-primaria-escura);
+  color: var(--texto-claro);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  margin-right: 3%;
+}
+
+.btn:hover {
+  background-color: var(--cor-primaria);
+  color: var(--cor-clara);
+}
+
+
+/*Estilos do Cabeçalho*/
+header {/*Definindo cor e padding do cabeçario*/
   background-color: var(--cor-clara);
   padding: 1% 11.7% 1% 11.7%;
 }
 
-.container-flex {
+.container-flex {/*Criando container com flexbox para separar o menu da logo*/
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+/*Estilizando logo*/
 .logo a {
   color: var(--cor-primaria);
-  font-size: clamp(0.1em, 0.8em + 1vw, 3.5em);
+  font-size: clamp(0.1em, 0.8em + 1vw, 3.5em); /*função clamp para adaptar o tamanho da letra conforme o tamanho da tela*/
   font-weight: bold;
-  text-decoration: none;
 }
 
+/*Estilizando menu*/
 nav {
   width: 70%;
 }
@@ -56,6 +84,7 @@ nav ul li a {
   font-size: clamp(0.1em, 0.8em + 0.8vw, 1.5em);
 }
 
+/*Transições do MENU*/
 .logo a:hover {
   color: var(--cor-primaria-escura);
 }
@@ -67,7 +96,9 @@ nav ul li a:hover {
   transition: 0.3s;
 }
 
-.container-grid {
+
+/*Estilizando MAIN do index*/
+.container-grid {/*Estilo tambem usado na MAIN da pag CONTATO*/
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 92vh;
@@ -81,6 +112,44 @@ nav ul li a:hover {
   border-right: #a23d0f 2px solid;
 }
 
+.subtitulo {/*Estilo tambem usado na MAIN da pag CONTATO*/
+  letter-spacing: 2px;
+  font-size: clamp(0.9em, 0.4em + 1vw, 1.5em);
+  color: var(--texto-escuro);
+  margin-bottom: 1%;
+}
+
+.titulo {
+  font-size: clamp(1em, 1em + 1vw, 2.5em);
+  font-weight: 400;
+  line-height: 105%;
+  color: var(--texto-claro);
+  margin-bottom: 1%;
+}
+
+.boasvindas {
+  line-height: 99%;
+  font-size: clamp(0.9em, 0.4em + 1vw, 1.5em);
+  color: var(--texto-escuro);
+  margin-bottom: 4%;
+  margin-right: 10%;
+}
+
+.foto {/*Estilo tambem usado na MAIN da pag CONTATO*/
+  display: flex;
+  justify-content: center;
+}
+
+#foto-inicio {
+  width: min(35rem, 90%);
+  border-radius: 150% 50% 50% 50%;
+  border: #040404 1px solid;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/*Estilizando MAIN da pag SOBRE*/
 .main-sobre {
   height: 100vh;
   background-image: url(./img/foto3.jpg);
@@ -112,61 +181,10 @@ nav ul li a:hover {
   margin: 0% 8% 2% 8%;
 }
 
-.subtitulo {
-  letter-spacing: 2px;
-  font-size: clamp(0.9em, 0.4em + 1vw, 1.5em);
-  color: var(--texto-escuro);
-  margin-bottom: 1%;
-}
 
-.titulo {
-  font-size: clamp(1em, 1em + 1vw, 2.5em);
-  font-weight: 400;
-  line-height: 105%;
-  color: var(--texto-claro);
-  margin-bottom: 1%;
-}
 
-.boasvindas {
-  line-height: 99%;
-  font-size: clamp(0.9em, 0.4em + 1vw, 1.5em);
-  color: var(--texto-escuro);
-  margin-bottom: 4%;
-  margin-right: 10%;
-}
-
-.btn-contratar,
-.btn-projetos {
-  font-weight: bold;
-  letter-spacing: 2.5px;
-  padding: 0.8rem 0.8rem;
-  border: 2px solid var(--cor-primaria);
-  border-radius: 10px;
-  cursor: pointer;
-  background-color: var(--cor-primaria-escura);
-  color: var(--texto-claro);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-  margin-right: 3%;
-}
-
-button:hover {
-  background-color: var(--cor-primaria);
-  color: var(--cor-clara);
-}
-
-.foto {
-  display: flex;
-  justify-content: center;
-}
-
-#foto-inicio {
-  width: min(35rem, 90%);
-  border-radius: 150% 50% 50% 50%;
-  border: #040404 1px solid;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-.curriculo {
+/*Estilização MAIN da pag FORMAÇÃO*/
+.curriculo, .portfolio {/*estilo tambem usado na pag PORTFOLIO*/
   margin-left: auto;
   margin-right: auto;
   width: 80%;
@@ -197,15 +215,90 @@ button:hover {
   display: block;
 }
 
-.descricao {
-  padding: 10px;
+
+
+/*Estilizando MAIN da pag PORTFOLIO*/
+.main-portfolio {
+  background-color: var(--cor-fundo);
 }
 
-.descricao h4 {
-  color: rgb(88, 87, 87);
+.projeto {
+  padding: 2%;
 }
 
-/* Extra small devices (phones, 650px and down) */
+.titulo-projeto {
+  color: var(--texto-claro);
+  display: flex;
+  justify-content: space-between;
+}
+
+.titulo-projeto img {
+  height: 30px;
+}
+
+.projeto p {
+  color: var(--texto-escuro);
+  font-size: 25px;
+  padding: 1% 2%;
+}
+
+.img-icon {
+  height: 15px;
+  padding: 2px 80%;
+}
+
+.show {
+  height: 30vh;
+  margin: 3px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.div1-foto {
+  height: 15px;
+  width: 20vw;
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(to right, #a2360f, #d96112);
+  padding: 0;
+  margin: 0;
+  overflow: hidden; /*Gambiarra para fazer as IMG aparecerem no :HOVER*/
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.div1-foto:hover {
+  height: fit-content;
+  width: 100%;
+  background-image: linear-gradient(to right, #a2360f, #d96112);
+  overflow: visible;
+  transition: 1.5s;
+  border: #d96112 solid 1px;
+  border-radius: 10%;
+}
+
+
+
+/*Estilizando MAIN da pag CONTATO*/
+.contate-me {
+  margin-top: 60px;
+  font-size: 40px;
+  text-align: justify;
+}
+
+.divcontato {
+  padding-right: 20%;
+}
+
+.contate-me img {
+  height: 60px;
+  width: 60px;
+}
+
+
+
+
+
+/* Adaptação para aparelhos bem pequenos (650px ou menos) */
 @media only screen and (max-width: 650px) {
   .container-flex {
     display: block;
@@ -233,8 +326,7 @@ button:hover {
     padding: 12%;
   }
 
-  .btn-contratar,
-  .btn-projetos {
+  .btn {
     font-size: 10px;
     letter-spacing: 1.5px;
     padding: 0.5rem 0.5rem;
@@ -256,17 +348,3 @@ button:hover {
   }
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-}
-
-@media only screen and (max-width: 2000px) {
-}
